@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -15,11 +15,36 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>//</string>
+			<string>(^[ \t]+)?(?=//)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.whitespace.comment.leading.scilab</string>
+				</dict>
+			</dict>
 			<key>end</key>
-			<string>$\n?</string>
-			<key>name</key>
-			<string>comment.line.double-slash.scilab</string>
+			<string>(?!\G)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>//</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.scilab</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\n</string>
+					<key>name</key>
+					<string>comment.line.double-slash.scilab</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -36,8 +61,24 @@
 		<dict>
 			<key>begin</key>
 			<string>"</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.scilab</string>
+				</dict>
+			</dict>
 			<key>end</key>
 			<string>"(?!")</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.scilab</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>string.quoted.double.scilab</string>
 			<key>patterns</key>
@@ -53,8 +94,24 @@
 		<dict>
 			<key>begin</key>
 			<string>(?&lt;![\w\]\)])'</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.scilab</string>
+				</dict>
+			</dict>
 			<key>end</key>
 			<string>'(?!')</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.scilab</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>string.quoted.single.scilab</string>
 			<key>patterns</key>

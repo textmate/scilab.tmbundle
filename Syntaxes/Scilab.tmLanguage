@@ -9,10 +9,6 @@
 		<string>tst</string>
 		<string>dem</string>
 	</array>
-	<key>foldingStartMarker</key>
-	<string>^(?!.*//.*).*\b(if|while|for|function|select)\b</string>
-	<key>foldingStopMarker</key>
-	<string>\b(endfunction|end)\b</string>
 	<key>name</key>
 	<string>Scilab</string>
 	<key>patterns</key>
